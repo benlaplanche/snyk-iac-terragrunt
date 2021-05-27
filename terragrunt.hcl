@@ -15,7 +15,7 @@ terraform {
 
   after_hook "Run Snyk Infrastructure as Code" {
     commands = ["plan"]
-    execute = ["sh", "-c", "snyk iac test tf-plan.json --experimental --scan=planned-values"]
+    execute = ["sh", "-c", "snyk iac test tf-plan.json --scan=planned-values"]
   }
 
   after_hook "Remove tf-plan.json" {
